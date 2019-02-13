@@ -97,7 +97,7 @@ const Login = ({ classes }) => {
 								</CardHeader>
 							</DialogTitle>
 							<DialogContent id="login-modal-slide-description" className={classes.modalBody}>
-								<form onSubmit={e => handleSubmit(e, signin)}>
+								<form>
 									<p className={`${classes.description} ${classes.textCenter}`}>Or Be Classical</p>
 									<CardBody className={classes.cardLoginBody}>
 										<CustomInput
@@ -129,8 +129,6 @@ const Login = ({ classes }) => {
 												value: email,
 												onChange: e => setEmail(e.target.value)
 											}}
-											// value={email}
-											// onChange={e => setEmail(e.target.value)}
 										/>
 										<CustomInput
 											value={password}
