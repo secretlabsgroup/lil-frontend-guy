@@ -1,25 +1,16 @@
 import Dialog from '@material-ui/core/Dialog';
-import styled from 'styled-components';
+import withStyles from '@material-ui/core/styles/withStyles';
+import ModalStyles from '../../styles/components/modal';
 
-const StyledDialog = styled(Dialog)`
-  overflow: auto;
-  display: block;
-  
-  .root {
-    max-width: 500px;
-  margin: 1.75rem auto;
-  border-radius: 6px;
-  overflow: visible;
-  width: 100%;
-  margin-top: 130px !important;
-  }
-`;
-const Modal = ({ children, ...rest }) => {
+const Modal = ({ children, classes, ...rest }) => {
 	return (
-		<StyledDialog {...rest}>
-			<div className='root'>{children}</div>
-		</StyledDialog>
+		<Dialog
+			classes={{ root: classes.modalRoot, paper: classes.modal + ' ' + classes.modalLogin }}
+			{...rest}
+		>
+			{children}
+		</Dialog>
 	);
 };
 
-export default Modal;
+export default withStyles(ModalStyles)(Modal);

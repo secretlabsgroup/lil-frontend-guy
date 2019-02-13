@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Button from '../Styles/Button';
+import Button from '../../styles/components/Button';
 import Dialog from '@material-ui/core/Dialog';
 
 const Register = () => {
