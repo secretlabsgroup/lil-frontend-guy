@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Parallax from './Parallax';
+import Parallax from '../../styles/components/Parallex';
 import GridContainer from '../../styles/components/Grid/GridContainer';
 import GridItem from '../../styles/components/Grid/GridItem';
 import Register from './Register';
@@ -8,7 +8,7 @@ import Login from './Login';
 const Splash = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
-		document.body.scrollTop = 0;
+		// document.body.scrollTop = 0;
 	}, []);
 	return (
 		<Parallax>

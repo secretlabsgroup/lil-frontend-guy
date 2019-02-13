@@ -17,7 +17,12 @@ import CustomInput from '../../styles/components/Input';
 import DialogContent from '@material-ui/core/DialogContent';
 
 const Login = ({ classes }) => {
+	const [ user, setUser ] = useState({ email: '', password: '' });
 	const [ modalShowing, setModalShowing ] = useState(false);
+
+	const login = () => {
+		console.log(user);
+	};
 	return (
 		<Fragment>
 			<Button round onClick={() => setModalShowing(true)}>
@@ -71,12 +76,12 @@ const Login = ({ classes }) => {
 						</CardHeader>
 					</DialogTitle>
 					<DialogContent id='login-modal-slide-description' className={classes.modalBody}>
-						<form>
+						<form id='loginForm' onSubmit={login}>
 							<p className={`${classes.description} ${classes.textCenter}`}>
 								Or Be Classical
 							</p>
 							<CardBody className={classes.cardLoginBody}>
-								<CustomInput
+								{/* <CustomInput
 									id='login-modal-first'
 									formControlProps={{
 										fullWidth: true,
@@ -89,7 +94,7 @@ const Login = ({ classes }) => {
 										),
 										placeholder: 'First Name...',
 									}}
-								/>
+								/> */}
 								<CustomInput
 									id='login-modal-email'
 									formControlProps={{
@@ -102,6 +107,8 @@ const Login = ({ classes }) => {
 											</InputAdornment>
 										),
 										placeholder: 'Email...',
+										value: user.email,
+										onChange: e => setUser({ ...user, email: e.target.value }),
 									}}
 								/>
 								<CustomInput
@@ -116,6 +123,9 @@ const Login = ({ classes }) => {
 											</InputAdornment>
 										),
 										placeholder: 'Password...',
+										value: user.password,
+										onChange: e =>
+											setUser({ ...user, password: e.target.value }),
 									}}
 								/>
 							</CardBody>
@@ -124,7 +134,14 @@ const Login = ({ classes }) => {
 					<DialogActions
 						className={`${classes.modalFooter} ${classes.justifyContentCenter}`}
 					>
-						<Button color='primary' simple size='lg'>
+						<Button
+							color='primary'
+							simple
+							size='lg'
+							component='a'
+							type='submit'
+							form='loginForm'
+						>
 							Get started
 						</Button>
 					</DialogActions>
