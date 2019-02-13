@@ -7,7 +7,7 @@ import Card from '../../styles/components/Card/Card';
 import CardHeader from '../../styles/components/Card/CardHeader';
 import Event from './Event';
 import withStyles from '@material-ui/core/styles/withStyles';
-import CardStyles from '../../styles/components/Card/Card/styles';
+import CardStyles from '../../styles/components/Card/sectioncard';
 import GridContainer from '../../styles/components/Grid/GridContainer';
 
 export const ALL_EVENTS_QUERY = gql`

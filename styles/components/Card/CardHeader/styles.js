@@ -77,6 +77,7 @@ const cardHeaderStyle = {
 	primaryCardHeader,
 	roseCardHeader,
 	coloredShadow,
+	cardTitle,
 };
 
 export default cardHeaderStyle;
