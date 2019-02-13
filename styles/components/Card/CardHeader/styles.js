@@ -6,6 +6,7 @@ import {
 	primaryCardHeader,
 	roseCardHeader,
 	cardTitle,
+	coloredShadow,
 } from '../../../material-kit';
 const cardHeaderStyle = {
 	cardHeader: {
@@ -75,6 +76,7 @@ const cardHeaderStyle = {
 	infoCardHeader,
 	primaryCardHeader,
 	roseCardHeader,
+	coloredShadow,
 };
 
 export default cardHeaderStyle;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Parallax from './Parallax';
-import GridContainer from '../Styles/Grid/GridContainer';
-import GridItem from '../Styles/Grid/GridItem';
+import GridContainer from '../../styles/components/Grid/GridContainer';
+import GridItem from '../../styles/components/Grid/GridItem';
 import Register from './Register';
 import Login from './Login';
 
