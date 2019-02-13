@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import Button from '../../styles/components/Button';
 import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
 import ModalStyles from '../../styles/components/Modal/styles';
 import withStyles from '@material-ui/core/styles/withStyles';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -19,7 +20,7 @@ const Login = ({ classes }) => {
 	const [ modalShowing, setModalShowing ] = useState(false);
 	return (
 		<Fragment>
-			<Button round primary onClick={() => setModalShowing(true)}>
+			<Button round onClick={() => setModalShowing(true)}>
 				Log In
 			</Button>
 			<Dialog
@@ -120,6 +121,13 @@ const Login = ({ classes }) => {
 							</CardBody>
 						</form>
 					</DialogContent>
+					<DialogActions
+						className={`${classes.modalFooter} ${classes.justifyContentCenter}`}
+					>
+						<Button color='primary' simple size='lg'>
+							Get started
+						</Button>
+					</DialogActions>
 				</Card>
 			</Dialog>
 		</Fragment>

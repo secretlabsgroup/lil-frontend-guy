@@ -149,6 +149,20 @@ const modalStyle = theme => ({
 			paddingTop: '0',
 		},
 	},
+	textCenter: {
+		textAlign: 'center',
+	},
+
+	socialLine: {
+		marginTop: '1rem',
+		textAlign: 'center',
+		padding: '0',
+	},
+	socialLineButton: {
+		'&, &:hover': { color: '#fff' },
+		marginLeft: '5px',
+		marginRight: '5px',
+	},
 	modalSignupCard: {
 		padding: '40px 0',
 		margin: '0',

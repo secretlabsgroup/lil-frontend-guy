@@ -5,6 +5,7 @@ import {
 	infoCardHeader,
 	primaryCardHeader,
 	roseCardHeader,
+	cardTitle,
 } from '../../../material-kit';
 const cardHeaderStyle = {
 	cardHeader: {
@@ -15,6 +16,10 @@ const cardHeaderStyle = {
 		marginTop: '-30px',
 		border: '0',
 		marginBottom: '0',
+	},
+	cardTitleWhite: {
+		...cardTitle,
+		color: '#FFFFFF !important',
 	},
 	cardHeaderPlain: {
 		marginLeft: '0px',
@@ -53,6 +58,12 @@ const cardHeaderStyle = {
 	cardHeaderSignup: {
 		marginLeft: '20px',
 		marginRight: '20px',
+		marginTop: '-40px',
+		padding: '20px 0',
+		width: '100%',
+		marginBottom: '15px',
+	},
+	cardLoginHeader: {
 		marginTop: '-40px',
 		padding: '20px 0',
 		width: '100%',

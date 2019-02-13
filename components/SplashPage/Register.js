@@ -1,5 +1,9 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import Button from '../../styles/components/Button';
+import Assignment from '@material-ui/icons/Assignment';
+import Card from '../../styles/components/Card/Card';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Close from '@material-ui/icons/Close';
 import Dialog from '@material-ui/core/Dialog';
 import ModalStyles from '../../styles/components/Modal/styles';
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -23,7 +27,25 @@ const Register = ({ classes }) => {
 				aria-labelledby='signup-modal-slide-title'
 				aria-describedby='signup-modal-slide-description'
 			>
-				hi
+				<Card plain className={classes.modalSignupCard}>
+					<DialogTitle
+						id='signup-modal-slide-title'
+						disableTypography
+						className={classes.modalHeader}
+					>
+						<Button
+							simple
+							className={classes.modalCloseButton}
+							key='close'
+							aria-label='Close'
+							onClick={() => setModalShowing(false)}
+						>
+							{' '}
+							<Close className={classes.modalClose} />
+						</Button>
+						<h3 className={`${classes.cardTitle} ${classes.modalTitle}`}>Register</h3>
+					</DialogTitle>
+				</Card>
 			</Dialog>
 		</Fragment>
 	);
