@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Parallax from './Parallax';
 import GridContainer from '../Styles/Grid/GridContainer';
 import GridItem from '../Styles/Grid/GridItem';
+import Register from './Register';
+import Login from './Login';
 
 const Splash = () => {
 	useEffect(() => {
@@ -21,6 +23,8 @@ const Splash = () => {
 							to enjoy your life. Sign up for Up4 today to let us help you help your
 							dating life.
 						</h4>
+						<Register />
+						<Login />
 					</GridItem>
 				</GridContainer>
 			</div>
