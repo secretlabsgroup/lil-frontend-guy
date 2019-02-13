@@ -23,8 +23,10 @@ const Splash = () => {
 							to enjoy your life. Sign up for Up4 today to let us help you help your
 							dating life.
 						</h4>
-						<Register />
-						<Login />
+						<div>
+							<Register />
+							<Login />
+						</div>
 					</GridItem>
 				</GridContainer>
 			</div>
