@@ -3,17 +3,23 @@ import Button from '../../styles/components/Button';
 import Dialog from '@material-ui/core/Dialog';
 import ModalStyles from '../../styles/components/Modal/styles';
 import withStyles from '@material-ui/core/styles/withStyles';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Mail from '@material-ui/icons/Mail';
+import Face from '@material-ui/icons/Face';
 import Card from '../../styles/components/Card/Card';
 import CardHeader from '../../styles/components/Card/CardHeader';
+import CardBody from '../../styles/components/Card/CardBody';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Close from '@material-ui/icons/Close';
+import Icon from '@material-ui/core/Icon';
+import CustomInput from '../../styles/components/Input';
 import DialogContent from '@material-ui/core/DialogContent';
 
 const Login = ({ classes }) => {
 	const [ modalShowing, setModalShowing ] = useState(false);
 	return (
 		<Fragment>
-			<Button round onClick={() => setModalShowing(true)}>
+			<Button round primary onClick={() => setModalShowing(true)}>
 				Log In
 			</Button>
 			<Dialog
@@ -68,6 +74,50 @@ const Login = ({ classes }) => {
 							<p className={`${classes.description} ${classes.textCenter}`}>
 								Or Be Classical
 							</p>
+							<CardBody className={classes.cardLoginBody}>
+								<CustomInput
+									id='login-modal-first'
+									formControlProps={{
+										fullWidth: true,
+									}}
+									inputProps={{
+										startAdornment: (
+											<InputAdornment position='start'>
+												<Face className={classes.icon} />
+											</InputAdornment>
+										),
+										placeholder: 'First Name...',
+									}}
+								/>
+								<CustomInput
+									id='login-modal-email'
+									formControlProps={{
+										fullWidth: true,
+									}}
+									inputProps={{
+										startAdornment: (
+											<InputAdornment position='start'>
+												<Mail className={classes.icon} />
+											</InputAdornment>
+										),
+										placeholder: 'Email...',
+									}}
+								/>
+								<CustomInput
+									id='login-modal-pass'
+									formControlProps={{
+										fullWidth: true,
+									}}
+									inputProps={{
+										startAdornment: (
+											<InputAdornment position='start'>
+												<Icon className={classes.icon}>lock_outline</Icon>
+											</InputAdornment>
+										),
+										placeholder: 'Password...',
+									}}
+								/>
+							</CardBody>
 						</form>
 					</DialogContent>
 				</Card>
