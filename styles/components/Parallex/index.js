@@ -9,7 +9,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 // core components
 import parallaxStyle from './styles';
 
-const Parallax = ({ classes, filter, className, children, style, image, small }) => {
+const Parallax = ({ classes, filter, className, children, style, small }) => {
 	let [ windowScrollTop, setWindowScroll ] = useState(0);
 	useEffect(() => {
 		if (window.innerWidth >= 768) {
@@ -35,7 +35,8 @@ const Parallax = ({ classes, filter, className, children, style, image, small })
 			className={parallaxClasses}
 			style={{
 				...style,
-				backgroundImage: 'url(' + image + ')',
+				backgroundImage:
+					'url(https://images.unsplash.com/photo-1499309221416-e18ee3411c38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)',
 				transform: 'translate3d(0,' + windowScrollTop + 'px,0)',
 			}}
 			// ref='parallax'

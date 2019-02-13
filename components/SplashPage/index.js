@@ -4,18 +4,20 @@ import GridContainer from '../../styles/components/Grid/GridContainer';
 import GridItem from '../../styles/components/Grid/GridItem';
 import Register from './Register';
 import Login from './Login';
+import withStyles from '@material-ui/core/styles/withStyles';
+import Styles from '../../styles/components/Splash/styles';
 
-const Splash = () => {
+const Splash = ({ classes }) => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 		// document.body.scrollTop = 0;
 	}, []);
 	return (
 		<Parallax>
-			<div className='container'>
+			<div className={classes.container}>
 				<GridContainer>
 					<GridItem xs={12} sm={6} md={6}>
-						<h1>Where will up4 take you?</h1>
+						<h1 className={classes.title}>Where will up4 take you?</h1>
 						<h4>
 							Trying something new can feel like a chore. Why is that? Are we boring?
 							Unimaginative? Chicken? We don’t think so. Whether it’s a restaurant, an
@@ -34,4 +36,4 @@ const Splash = () => {
 	);
 };
 
-export default Splash;
+export default withStyles(Styles)(Splash);
