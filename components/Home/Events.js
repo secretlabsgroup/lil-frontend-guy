@@ -38,7 +38,6 @@ const Events = ({ classes }) => {
 		<GridContainer style={{ maxWidth: 'calc(100% - 200px)', marginLeft: '200px' }}>
 			<Query query={ALL_EVENTS_QUERY}>
 				{({ data, error, loading }) => {
-					console.log(data);
 					if (loading) return <p>Loading...</p>;
 					if (error) return <p>Error: {error.message}</p>;
 					return data.getEvents.map(event => (

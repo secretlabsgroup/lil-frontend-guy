@@ -12,7 +12,6 @@ export default class MyDocument extends Document {
 		let css;
 		// It might be undefined, e.g. after an error.
 		if (pageContext) {
-			console.log(pageContext);
 			css = pageContext.sheetsRegistry.toString();
 		}
 		return {

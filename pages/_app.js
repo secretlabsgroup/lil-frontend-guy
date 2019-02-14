@@ -1,9 +1,10 @@
+import '../utils/bootstrap';
 import App, { Container } from 'next/app';
 import Page from '../components/Page';
 import { ApolloProvider } from 'react-apollo';
 import withData from '../utils/withData';
 import '../styles/scss/index.scss';
-
+import { StylesProvider, ThemeProvider } from '@material-ui/styles';
 import JssProvider from 'react-jss/lib/JssProvider';
 import getPageContext from '../utils/getPageContext';
 
@@ -24,26 +25,26 @@ class MyApp extends App {
 			pageProps = await Component.getInitialProps(ctx);
 		}
 
-		console.log(pageProps);
 		pageProps.query = ctx.query;
 
 		return { pageProps };
 	}
 	render() {
 		const { Component, apollo, pageProps } = this.props;
-		console.log(this.pageContext, pageProps);
+
 		return (
 			<Container>
-				<JssProvider
-					registry={this.pageContext.sheetsRegistry}
+				<StylesProvider
+					sheetsRegistry={this.pageContext.sheetsRegistry}
 					generateClassName={this.pageContext.generateClassName}
+					sheetsManager={this.pageContext.sheetsManager}
 				>
 					<ApolloProvider client={apollo}>
 						<Page>
 							<Component pageContext={this.pageContext} {...pageProps} />
 						</Page>
 					</ApolloProvider>
-				</JssProvider>
+				</StylesProvider>
 			</Container>
 		);
 	}

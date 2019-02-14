@@ -23,6 +23,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Check from '@material-ui/icons/Check';
+
 const Register = ({ classes }) => {
 	const [ modalShowing, setModalShowing ] = useState(false);
 	return (
